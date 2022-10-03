@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customar;
+use App\Models\tags;
 
 
 class CustomarController extends Controller
@@ -59,7 +60,7 @@ class CustomarController extends Controller
 
     public function all($tags){
 
-        $res = User::WhereIn('tags',$tags)->get();
+        $res = User::Where('tags',$tags)->get();
 
         return $res;
     }
