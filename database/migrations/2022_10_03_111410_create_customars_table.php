@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('password');
             $table->string('phone')->unique();
+            $table->foreign('customars_tag')->references('customars_tag')->on;
             $table->timestamps();
         });
     }

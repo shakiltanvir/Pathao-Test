@@ -18,11 +18,23 @@ use App\Http\Controllers\CustomarController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-//get api
-Route::get('/customar/{id}',[CustomarController::class,'showCustomar']);
-Route::get('/customars',[CustomarController::class,'index']);
+//get api single
+Route::get('/user/{id}',[CustomarController::class,'showCustomar']);
+//get all customars
+Route::get('/users',[CustomarController::class,'index']);
+//customar add
 Route::post('/add-customar',[CustomarController::class,'newCustomar']);
-Route::get('/delete-customar/{id}',[CustomarController::class,'destroyClient']);
-Route::post('/update-customar',[CustomarController::class,'updateClient']);
+Route::post('/users/{id}/tags',[UserController::class, 'create']);
+Route::get('/users/{tags}',[UserController::class, 'All']);
+
+//customar delete
+// Route::get('/delete-customar/{id}',[CustomarController::class,'destroyClient']);
+// //customar update
+// Route::post('/update-customar',[CustomarController::class,'updateClient']);
+// //login
+// Route::get('/login',[CustomarController::class,'login']);
+// //registration
+// Route::get('/registration',[CustomarController::class,'registration']);
+// Route::post('/customar-registration',[CustomarController::class,'clientRegister'])->name('customar-registration');
 
 
