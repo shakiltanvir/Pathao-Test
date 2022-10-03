@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomarController;
 
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,18 +15,11 @@ use App\Http\Controllers\CustomarController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/user/{id}',[CustomarController::class,'showCustomar']);
-
-Route::get('/users',[CustomarController::class,'index']);
-
-Route::post('/add-user',[CustomarController::class,'newCustomar']);
+Route::get('/user', [UserController::class, 'index']);
 Route::post('/users/{id}/tags',[UserController::class, 'create']);
-Route::get('/users/{tags}',[UserController::class, 'all']);
-
-
-
-
+Route::get('/users/{tags}',[UserController::class, 'All']);
+Route::get('/users/index',[UserController::class, 'index']);
