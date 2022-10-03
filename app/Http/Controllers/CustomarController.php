@@ -37,7 +37,7 @@ class CustomarController extends Controller
         return response()->json(['id'=> $id]);
 
     }
-    public function create($id,Request $request){
+    public function create($id,request $request){
         $data = $request->all;
 
         $model = new User();

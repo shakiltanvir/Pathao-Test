@@ -23,9 +23,9 @@ Route::get('/user/{id}',[CustomarController::class,'showCustomar']);
 //get all customars
 Route::get('/users',[CustomarController::class,'index']);
 //customar add
-Route::post('/add-customar',[CustomarController::class,'newCustomar']);
+Route::post('/add-user',[CustomarController::class,'newCustomar']);
 Route::post('/users/{id}/tags',[UserController::class, 'create']);
-Route::get('/users/{tags}',[UserController::class, 'All']);
+Route::get('/users/{tags}',[UserController::class, 'all']);
 
 //customar delete
 // Route::get('/delete-customar/{id}',[CustomarController::class,'destroyClient']);
